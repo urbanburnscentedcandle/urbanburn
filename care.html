@@ -4,17 +4,94 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Candle care — Urban Burn</title>
-<meta name="description" content="How to burn an Urban Burn candle safely, get a clean melt pool, and reuse the vessel once the wax is finished.">
+<meta name="description" content="How to burn an Urban Burn candle safely, get a clean melt pool, and reuse the vessel.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<style>
+:root {
+  --ivory:#f7f3ec; --linen:#ece5d8; --ink:#211e1b; --smoke:#6f6862; --line:#d5cbb9;
+  --clay:#b4653f; --moss:#6b7a5e; --ember:#d9884f;
+  --pear:#c9b27e; --fig:#5e6b4f; --oud:#4a3a31; --vanille:#e0cfb2; --brew:#6b4a35;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:"Jost",system-ui,-apple-system,sans-serif;font-weight:300;font-size:17px;line-height:1.7}
+h1,h2,h3,.wordmark,.scent-name{font-family:"Marcellus",Georgia,serif;font-weight:400;line-height:1.18}
+p{margin:0 0 1.15em;max-width:62ch}
+a{color:var(--clay);text-underline-offset:3px}
+a:hover{color:var(--ink)}
+a:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+.wrap{width:min(100% - 2.5rem,66rem);margin-inline:auto}
+
+.wordmark{font-size:1.1rem;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;color:inherit;display:inline-flex;align-items:center;gap:.6rem}
+.wordmark .flame{width:7px;height:11px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:var(--ember);flex:none}
+
+.site-head{padding:1.5rem 0}
+.site-head.on-dark{background:var(--ink);color:var(--ivory)}
+.site-head .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.6rem}
+.site-nav{display:flex;gap:1.5rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-left:auto}
+.site-nav a{color:var(--smoke);text-decoration:none}
+.on-dark .site-nav a{color:#a9a09a}
+.site-nav a:hover,.site-nav a[aria-current="page"]{color:var(--ink)}
+.on-dark .site-nav a:hover,.on-dark .site-nav a[aria-current="page"]{color:var(--ivory)}
+
+.hero{background:var(--ink);color:var(--ivory);padding:5rem 0 6rem;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:-25%;right:-10%;width:40rem;height:40rem;background:radial-gradient(circle,rgba(217,136,79,.28) 0%,rgba(217,136,79,.06) 42%,transparent 68%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(2.4rem,7.5vw,4.4rem);margin:0 0 1.3rem;max-width:16ch}
+.hero .tagline{color:var(--ember);letter-spacing:.2em;text-transform:uppercase;font-size:.78rem;margin:0 0 1.6rem}
+.hero .lede{color:#bdb4ac;font-size:1.08rem;max-width:44ch;margin:0}
+
+.band{padding:4rem 0}
+.band.linen{background:var(--linen)}
+h1.page-title{font-size:clamp(2rem,6vw,3rem);margin:0 0 .6rem}
+h2{font-size:clamp(1.4rem,3.2vw,1.95rem);margin:0 0 1.8rem}
+.band h2:not(:first-child){margin-top:3rem}
+h2 .rule{display:block;width:3rem;height:2px;background:var(--clay);margin-top:.85rem}
+
+.scents{list-style:none;margin:0;padding:0}
+.scent{display:grid;grid-template-columns:auto 1fr;gap:.2rem 1.2rem;padding:1.8rem 0;border-top:1px solid var(--line);align-items:start}
+.scent:last-child{border-bottom:1px solid var(--line)}
+.swatch{width:2.6rem;height:2.6rem;border-radius:50%;grid-row:span 3;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.scent-name{font-size:1.3rem;margin:.1rem 0 .2rem}
+.scent-notes{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);margin:0 0 .6rem}
+.scent p.body{margin:0;max-width:54ch}
+@media(min-width:48rem){
+ .scent{grid-template-columns:2.6rem 16rem 1fr;gap:0 2rem;align-items:center}
+ .swatch{grid-row:span 2}
+ .scent-name{grid-column:2;margin:0}
+ .scent-notes{grid-column:2;margin:.3rem 0 0}
+ .scent p.body{grid-column:3;grid-row:1/span 2}
+}
+
+.gallery{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));margin:0 0 2rem}
+.slot{aspect-ratio:4/5;border:1px dashed var(--clay);background:rgba(180,101,63,.05);display:grid;place-content:center;text-align:center;padding:1rem;color:var(--clay);font-size:.72rem;letter-spacing:.06em;line-height:1.5}
+.slot img{width:100%;height:100%;object-fit:cover}
+
+.channels,.care{list-style:none;padding:0;margin:1.4rem 0 0}
+.channels li{padding:.8rem 0;border-bottom:1px solid var(--line)}
+.channels li:first-child{border-top:1px solid var(--line)}
+.care li{padding:1rem 0;border-bottom:1px solid var(--line);max-width:62ch}
+.care strong{font-weight:500}
+.meta{color:var(--smoke);font-size:.95rem}
+
+.fill{background:#fbeec9;border-bottom:1px dashed var(--clay);padding:0 .25em;color:var(--ink)}
+
+.site-foot{background:var(--ink);color:#8e8780;padding:2.6rem 0 3.2rem;font-size:.8rem}
+.site-foot .wordmark{color:var(--ivory);margin-bottom:1.2rem}
+.site-foot p{max-width:none;margin:0 0 .4rem}
+.site-foot a{color:#b6aca4}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+</style>
 </head>
 <body>
 
 <header class="site-head">
   <div class="wrap">
-    <a class="wordmark" href="index.html">Urban Burn</a>
+    <a class="wordmark" href="index.html"><span class="flame"></span>Urban Burn</a>
     <nav class="site-nav">
       <a href="index.html">Scents</a>
       <a href="care.html" aria-current="page">Care</a>
@@ -24,35 +101,43 @@
 </header>
 
 <main>
-  <div class="wrap">
-    <h1>Looking after your candle</h1>
-    <p class="lede meta">Five habits that make a candle last longer, throw more scent, and burn safely.</p>
+  <section class="band">
+    <div class="wrap">
+      <h1 class="page-title">Looking after your candle</h1>
+      <p class="meta">Five habits that make a candle last longer, throw more scent, and burn safely.</p>
+      <ul class="care">
+        <li><strong>Trim the wick to 5mm before every burn.</strong> An untrimmed wick burns tall, sooty and hot. Trimming is the single thing that most improves how a candle behaves.</li>
+        <li><strong>Let the first burn form a full pool.</strong> Burn until melted wax reaches the edge of the vessel, usually two to three hours. Soy wax remembers its first burn, and cutting it short leaves a tunnel you cannot undo.</li>
+        <li><strong>Burn for no more than four hours at a time.</strong> Longer than that and the vessel gets hot and the wick starts to mushroom. Let it cool fully before relighting.</li>
+        <li><strong>Keep it away from draughts, curtains, children and pets.</strong> Set it on a heat-resistant surface, and never leave a lit candle unattended.</li>
+        <li><strong>Stop when about 10mm of wax remains.</strong> Below that the flame sits too close to the base of the vessel.</li>
+      </ul>
+    </div>
+  </section>
 
-    <ul class="care">
-      <li><strong>Trim the wick to 5mm before every burn.</strong> An untrimmed wick burns tall, sooty and hot. Trimming is the single thing that most improves how a candle behaves.</li>
-      <li><strong>Let the first burn form a full pool.</strong> Burn until melted wax reaches the edge of the vessel — usually two to three hours. Soy wax remembers its first burn, and cutting it short leaves a tunnel you can't undo.</li>
-      <li><strong>Burn for no more than four hours at a time.</strong> Longer than that and the vessel gets hot and the wick starts to mushroom. Let it cool fully before relighting.</li>
-      <li><strong>Keep it away from draughts, curtains, children and pets.</strong> Set it on a heat-resistant surface, and never leave a lit candle unattended.</li>
-      <li><strong>Stop when about 10mm of wax remains.</strong> Below that the flame sits too close to the base of the vessel.</li>
-    </ul>
+  <section class="band linen">
+    <div class="wrap">
+      <h2>Cleaning out the empty vessel<span class="rule"></span></h2>
+      <p>Put the vessel in the freezer for three to four hours. The wax contracts and lifts out in one piece; press gently with a spoon if it needs help. Wipe out the residue, wash with warm soapy water, and pull the wick tab off with pliers.</p>
+      <p>Do not pour boiling water into heavy stone or concrete vessels. The thermal mass makes cracking a real risk, and the freezer method works better anyway.</p>
+    </div>
+  </section>
 
-    <h2>Cleaning out the empty vessel</h2>
-    <p>Put the vessel in the freezer for three to four hours. The wax contracts and lifts out in one piece — press gently with a spoon if it needs help. Wipe out the residue, wash with warm soapy water, and pull the wick tab off with pliers.</p>
-    <p>Do not pour boiling water into heavy stone or concrete vessels. The thermal mass makes cracking a real risk, and the freezer method works better anyway.</p>
-
-    <h2>A second life</h2>
-    <p>The vessels are made to outlast the wax. Ours end up holding makeup brushes, paper clips, rings by the sink, matches, or a very small plant. <span class="fill">[ADD YOUR OWN SUGGESTION OR A LINK TO A CUSTOMER PHOTO]</span></p>
-
-    <h2>Something wrong with your candle?</h2>
-    <p>If a candle smokes heavily, burns unevenly, or the flame looks too large even after trimming, stop using it and <a href="contact.html">get in touch</a> with your order number and a photo. We'll replace it.</p>
-
-  </div>
+  <section class="band">
+    <div class="wrap">
+      <h2>A second life<span class="rule"></span></h2>
+      <p>The vessels are made to outlast the wax. Ours end up holding makeup brushes, paper clips, rings by the sink, matches, or a very small plant. <span class="fill">[ADD YOUR OWN SUGGESTION OR A CUSTOMER PHOTO]</span></p>
+      <h2>Something wrong with your candle?<span class="rule"></span></h2>
+      <p>If a candle smokes heavily, burns unevenly, or the flame looks too large even after trimming, stop using it and <a href="contact.html">get in touch</a> with your order number and a photo. We will replace it.</p>
+    </div>
+  </section>
 </main>
 
 <footer class="site-foot">
   <div class="wrap">
-    <p>Urban Burn is the trading name of <span class="fill">[REGISTERED BUSINESS NAME]</span>, registration no. <span class="fill">[SSM REGISTRATION NO.]</span>, registered in Malaysia. <span class="fill">[BUSINESS EMAIL]</span></p>
-    <p><a href="policies.html">Shipping, returns and privacy</a></p>
+    <a class="wordmark" href="index.html"><span class="flame"></span>Urban Burn</a>
+    <p>Trading name of <span class="fill">[REGISTERED BUSINESS NAME]</span>, registration no. <span class="fill">[SSM REGISTRATION NO.]</span>, registered in Malaysia.</p>
+    <p><span class="fill">[BUSINESS EMAIL]</span> &nbsp;·&nbsp; <a href="policies.html">Shipping, returns and privacy</a></p>
   </div>
 </footer>
 
