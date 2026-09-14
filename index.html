@@ -4,17 +4,94 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Urban Burn — Hand-poured scented candles, Malaysia</title>
-<meta name="description" content="Urban Burn hand-pours scented soy candles in Malaysia, in vessels made to be kept. English Pear &amp; Freesia, Wild Fig &amp; Cassis, Oud Enclave and more.">
+<meta name="description" content="Urban Burn hand-pours scented soy candles in Malaysia, in vessels made to be kept.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<style>
+:root {
+  --ivory:#f7f3ec; --linen:#ece5d8; --ink:#211e1b; --smoke:#6f6862; --line:#d5cbb9;
+  --clay:#b4653f; --moss:#6b7a5e; --ember:#d9884f;
+  --pear:#c9b27e; --fig:#5e6b4f; --oud:#4a3a31; --vanille:#e0cfb2; --brew:#6b4a35;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ivory);color:var(--ink);font-family:"Jost",system-ui,-apple-system,sans-serif;font-weight:300;font-size:17px;line-height:1.7}
+h1,h2,h3,.wordmark,.scent-name{font-family:"Marcellus",Georgia,serif;font-weight:400;line-height:1.18}
+p{margin:0 0 1.15em;max-width:62ch}
+a{color:var(--clay);text-underline-offset:3px}
+a:hover{color:var(--ink)}
+a:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
+.wrap{width:min(100% - 2.5rem,66rem);margin-inline:auto}
+
+.wordmark{font-size:1.1rem;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;color:inherit;display:inline-flex;align-items:center;gap:.6rem}
+.wordmark .flame{width:7px;height:11px;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:var(--ember);flex:none}
+
+.site-head{padding:1.5rem 0}
+.site-head.on-dark{background:var(--ink);color:var(--ivory)}
+.site-head .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.6rem}
+.site-nav{display:flex;gap:1.5rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-left:auto}
+.site-nav a{color:var(--smoke);text-decoration:none}
+.on-dark .site-nav a{color:#a9a09a}
+.site-nav a:hover,.site-nav a[aria-current="page"]{color:var(--ink)}
+.on-dark .site-nav a:hover,.on-dark .site-nav a[aria-current="page"]{color:var(--ivory)}
+
+.hero{background:var(--ink);color:var(--ivory);padding:5rem 0 6rem;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;top:-25%;right:-10%;width:40rem;height:40rem;background:radial-gradient(circle,rgba(217,136,79,.28) 0%,rgba(217,136,79,.06) 42%,transparent 68%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(2.4rem,7.5vw,4.4rem);margin:0 0 1.3rem;max-width:16ch}
+.hero .tagline{color:var(--ember);letter-spacing:.2em;text-transform:uppercase;font-size:.78rem;margin:0 0 1.6rem}
+.hero .lede{color:#bdb4ac;font-size:1.08rem;max-width:44ch;margin:0}
+
+.band{padding:4rem 0}
+.band.linen{background:var(--linen)}
+h1.page-title{font-size:clamp(2rem,6vw,3rem);margin:0 0 .6rem}
+h2{font-size:clamp(1.4rem,3.2vw,1.95rem);margin:0 0 1.8rem}
+.band h2:not(:first-child){margin-top:3rem}
+h2 .rule{display:block;width:3rem;height:2px;background:var(--clay);margin-top:.85rem}
+
+.scents{list-style:none;margin:0;padding:0}
+.scent{display:grid;grid-template-columns:auto 1fr;gap:.2rem 1.2rem;padding:1.8rem 0;border-top:1px solid var(--line);align-items:start}
+.scent:last-child{border-bottom:1px solid var(--line)}
+.swatch{width:2.6rem;height:2.6rem;border-radius:50%;grid-row:span 3;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.scent-name{font-size:1.3rem;margin:.1rem 0 .2rem}
+.scent-notes{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--moss);margin:0 0 .6rem}
+.scent p.body{margin:0;max-width:54ch}
+@media(min-width:48rem){
+ .scent{grid-template-columns:2.6rem 16rem 1fr;gap:0 2rem;align-items:center}
+ .swatch{grid-row:span 2}
+ .scent-name{grid-column:2;margin:0}
+ .scent-notes{grid-column:2;margin:.3rem 0 0}
+ .scent p.body{grid-column:3;grid-row:1/span 2}
+}
+
+.gallery{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));margin:0 0 2rem}
+.slot{aspect-ratio:4/5;border:1px dashed var(--clay);background:rgba(180,101,63,.05);display:grid;place-content:center;text-align:center;padding:1rem;color:var(--clay);font-size:.72rem;letter-spacing:.06em;line-height:1.5}
+.slot img{width:100%;height:100%;object-fit:cover}
+
+.channels,.care{list-style:none;padding:0;margin:1.4rem 0 0}
+.channels li{padding:.8rem 0;border-bottom:1px solid var(--line)}
+.channels li:first-child{border-top:1px solid var(--line)}
+.care li{padding:1rem 0;border-bottom:1px solid var(--line);max-width:62ch}
+.care strong{font-weight:500}
+.meta{color:var(--smoke);font-size:.95rem}
+
+.fill{background:#fbeec9;border-bottom:1px dashed var(--clay);padding:0 .25em;color:var(--ink)}
+
+.site-foot{background:var(--ink);color:#8e8780;padding:2.6rem 0 3.2rem;font-size:.8rem}
+.site-foot .wordmark{color:var(--ivory);margin-bottom:1.2rem}
+.site-foot p{max-width:none;margin:0 0 .4rem}
+.site-foot a{color:#b6aca4}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+</style>
 </head>
 <body>
 
-<header class="site-head">
+<header class="site-head on-dark">
   <div class="wrap">
-    <a class="wordmark" href="index.html">Urban Burn</a>
+    <a class="wordmark" href="index.html"><span class="flame"></span>Urban Burn</a>
     <nav class="site-nav">
       <a href="index.html" aria-current="page">Scents</a>
       <a href="care.html">Care</a>
@@ -25,87 +102,91 @@
 
 <section class="hero">
   <div class="wrap">
-    <h1>Hand-poured in small batches.</h1>
     <p class="tagline">Light it. Let the city wait.</p>
+    <h1>Hand-poured in small batches.</h1>
     <p class="lede">Soy wax candles in vessels beautiful enough to keep and affordable enough to give. Poured, cured and packed by hand in Malaysia.</p>
   </div>
 </section>
 
 <main>
-  <div class="wrap">
 
-    <h2>The range</h2>
-    <ul class="scents">
-
+  <section class="band">
+    <div class="wrap">
+      <h2>The range<span class="rule"></span></h2>
+      <ul class="scents">
       <li class="scent">
-        <div>
-          <div class="scent-name">English Pear &amp; Freesia</div>
-          <p class="scent-notes">Ripe pear · Freesia · Amber</p>
-        </div>
-        <p>Sliced pear over a soft floral heart, closing on warm amber. The one people buy as a gift and then come back for themselves.</p>
+        <span class="swatch" style="background: var(--pear)"></span>
+        <h3 class="scent-name">English Pear &amp; Freesia</h3>
+        <p class="scent-notes">Ripe pear · Freesia · Amber</p>
+        <p class="body">Sliced pear over a soft floral heart, closing on warm amber. The one people buy as a gift and then come back for themselves.</p>
       </li>
-
       <li class="scent">
-        <div>
-          <div class="scent-name">Wild Fig &amp; Cassis</div>
-          <p class="scent-notes">Green fig · Blackcurrant · Cedar</p>
-        </div>
-        <p>Fig leaf and dark blackcurrant with dry cedar underneath. Fruity without being sweet — the closest thing we make to a green scent.</p>
+        <span class="swatch" style="background: var(--fig)"></span>
+        <h3 class="scent-name">Wild Fig &amp; Cassis</h3>
+        <p class="scent-notes">Green fig · Blackcurrant · Cedar</p>
+        <p class="body">Fig leaf and dark blackcurrant with dry cedar underneath. Fruity without being sweet — the closest thing we make to a green scent.</p>
       </li>
-
       <li class="scent">
-        <div>
-          <div class="scent-name">Oud Enclave</div>
-          <p class="scent-notes">Oud · Smoked wood · Leather</p>
-        </div>
-        <p>Resinous and deep, with a quiet smoke running through it. Our heaviest scent, made for evenings and larger rooms.</p>
+        <span class="swatch" style="background: var(--oud)"></span>
+        <h3 class="scent-name">Oud Enclave</h3>
+        <p class="scent-notes">Oud · Smoked wood · Leather</p>
+        <p class="body">Resinous and deep, with a quiet smoke running through it. Our heaviest scent, made for evenings and larger rooms.</p>
       </li>
-
       <li class="scent">
-        <div>
-          <div class="scent-name">Vanille Crème</div>
-          <p class="scent-notes">Bourbon vanilla · Tonka · Milk</p>
-        </div>
-        <p>Soft vanilla with a milky edge, kept away from bakery sweetness by a touch of tonka. Easy to live with all day.</p>
+        <span class="swatch" style="background: var(--vanille)"></span>
+        <h3 class="scent-name">Vanille Crème</h3>
+        <p class="scent-notes">Bourbon vanilla · Tonka · Milk</p>
+        <p class="body">Soft vanilla with a milky edge, kept away from bakery sweetness by a touch of tonka. Easy to live with all day.</p>
       </li>
-
       <li class="scent">
-        <div>
-          <div class="scent-name">Morning Brew</div>
-          <p class="scent-notes">Roasted coffee · Cocoa · Cream</p>
-        </div>
-        <p>Fresh-ground coffee with cocoa and cream behind it. Best in a kitchen or a small workspace in the first hour of the day.</p>
+        <span class="swatch" style="background: var(--brew)"></span>
+        <h3 class="scent-name">Morning Brew</h3>
+        <p class="scent-notes">Roasted coffee · Cocoa · Cream</p>
+        <p class="body">Fresh-ground coffee with cocoa and cream behind it. Best in a kitchen or a small workspace in the first hour of the day.</p>
       </li>
-
       <li class="scent">
-        <div>
-          <div class="scent-name"><span class="fill">[SCENT NAME]</span></div>
-          <p class="scent-notes"><span class="fill">[TOP · HEART · BASE]</span></p>
-        </div>
-        <p><span class="fill">[Two sentences: what it smells like, then where or when to burn it. Copy this block for each remaining scent.]</span></p>
+        <span class="swatch" style="background: var(--pear)"></span>
+        <h3 class="scent-name"><span class="fill">[SCENT NAME]</span></h3>
+        <p class="scent-notes"><span class="fill">[TOP · HEART · BASE]</span></p>
+        <p class="body"><span class="fill">[Two sentences: what it smells like, then where or when to burn it. Duplicate this whole block for each remaining scent.]</span></p>
       </li>
+      </ul>
+    </div>
+  </section>
 
-    </ul>
+  <section class="band linen">
+    <div class="wrap">
+      <h2>In the vessel<span class="rule"></span></h2>
+      <div class="gallery">
+        <div class="slot">DROP PHOTO 1 HERE<br>&lt;img src="photo1.jpg" alt=""&gt;</div>
+        <div class="slot">DROP PHOTO 2 HERE</div>
+        <div class="slot">DROP PHOTO 3 HERE</div>
+        <div class="slot">DROP PHOTO 4 HERE</div>
+      </div>
+      <p>Single-wick candles in <span class="fill">[SIZE]</span>g vessels burn for roughly <span class="fill">[N]</span> hours. Multi-wick candles in <span class="fill">[SIZE]</span>g vessels are made for larger rooms. Gift sets and seasonal editions are released in fixed batch quantities.</p>
+      <p class="meta">Every vessel is chosen to be reusable once the wax is finished. Prices from RM<span class="fill">[LOW]</span>.</p>
+    </div>
+  </section>
 
-    <h2>Sizes and format</h2>
-    <p>Single-wick candles in <span class="fill">[SIZE]</span>g vessels with a burn time of roughly <span class="fill">[N]</span> hours, and multi-wick candles in <span class="fill">[SIZE]</span>g vessels for larger rooms. Gift sets and seasonal editions are released in fixed batch quantities.</p>
-    <p class="meta">Every vessel is chosen to be reusable once the wax is finished. Prices from RM<span class="fill">[LOW]</span>.</p>
+  <section class="band">
+    <div class="wrap">
+      <h2>Where to buy<span class="rule"></span></h2>
+      <p>We sell direct through our official storefronts.</p>
+      <ul class="channels">
+        <li>Shopee — <a href="#"><span class="fill">[SHOPEE STORE URL]</span></a></li>
+        <li>Lazada — <a href="#"><span class="fill">[LAZADA STORE URL]</span></a></li>
+        <li>TikTok Shop — <a href="#"><span class="fill">[TIKTOK SHOP URL]</span></a></li>
+      </ul>
+    </div>
+  </section>
 
-    <h2>Where to buy</h2>
-    <p>We sell direct through our official storefronts.</p>
-    <ul class="channels">
-      <li>Shopee — <a href="[SHOPEE STORE URL]"><span class="fill">[SHOPEE STORE URL]</span></a></li>
-      <li>Lazada — <a href="[LAZADA STORE URL]"><span class="fill">[LAZADA STORE URL]</span></a></li>
-      <li>TikTok Shop — <a href="[TIKTOK SHOP URL]"><span class="fill">[TIKTOK SHOP URL]</span></a></li>
-    </ul>
-
-  </div>
 </main>
 
 <footer class="site-foot">
   <div class="wrap">
-    <p>Urban Burn is the trading name of <span class="fill">[REGISTERED BUSINESS NAME]</span>, registration no. <span class="fill">[SSM REGISTRATION NO.]</span>, registered in Malaysia. <span class="fill">[BUSINESS EMAIL]</span></p>
-    <p><a href="policies.html">Shipping, returns and privacy</a></p>
+    <a class="wordmark" href="index.html"><span class="flame"></span>Urban Burn</a>
+    <p>Trading name of <span class="fill">[REGISTERED BUSINESS NAME]</span>, registration no. <span class="fill">[SSM REGISTRATION NO.]</span>, registered in Malaysia.</p>
+    <p><span class="fill">[BUSINESS EMAIL]</span> &nbsp;·&nbsp; <a href="policies.html">Shipping, returns and privacy</a></p>
   </div>
 </footer>
 
