@@ -1,0 +1,111 @@
+:root {
+  --ivory: #f6f2ea;
+  --stone: #e4ddd1;
+  --clay: #b4653f;
+  --moss: #6b7a5e;
+  --ink: #2e2a26;
+  --muted: #77706a;
+  --line: #d8d0c2;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: "Jost", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+h1, h2, .scent-name, .wordmark {
+  font-family: "Marcellus", Georgia, serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(2.3rem, 7vw, 3.8rem); margin: 0 0 0.3em; letter-spacing: -0.005em; }
+h2 { font-size: clamp(1.35rem, 3.2vw, 1.75rem); margin: 3.4rem 0 1.4rem; }
+p { margin: 0 0 1.1em; max-width: 60ch; }
+
+a { color: var(--clay); text-underline-offset: 3px; }
+a:hover { color: var(--ink); }
+a:focus-visible { outline: 2px solid var(--moss); outline-offset: 3px; }
+
+.wrap { width: min(100% - 2.5rem, 60rem); margin-inline: auto; }
+
+/* header */
+.site-head { padding: 1.4rem 0; }
+.site-head .wrap { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1.5rem; }
+.wordmark { font-size: 1.4rem; letter-spacing: 0.06em; color: var(--ink); text-decoration: none; margin-right: auto; }
+.site-nav { display: flex; gap: 1.4rem; font-size: 0.92rem; letter-spacing: 0.02em; }
+.site-nav a { color: var(--muted); text-decoration: none; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--ink); }
+
+/* hero */
+.hero { padding: 3.5rem 0 3rem; }
+.hero .tagline {
+  font-family: "Marcellus", serif;
+  font-size: clamp(1.1rem, 2.6vw, 1.45rem);
+  color: var(--clay);
+  margin: 0 0 1.6rem;
+}
+.hero .lede { font-size: 1.1rem; color: var(--muted); max-width: 46ch; }
+
+/* scent list — the heart of the page */
+.scents { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.scent {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.3rem 2.5rem;
+  padding: 1.7rem 0;
+  border-bottom: 1px solid var(--line);
+}
+@media (min-width: 46rem) {
+  .scent { grid-template-columns: 15rem 1fr; }
+}
+.scent-name { font-size: 1.28rem; }
+.scent-notes {
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--moss);
+  margin: 0.25rem 0 0;
+}
+.scent p { margin: 0; color: var(--ink); }
+
+.meta { color: var(--muted); font-size: 0.95rem; }
+
+/* buy links */
+.channels { list-style: none; padding: 0; margin: 1.2rem 0 0; }
+.channels li { padding: 0.6rem 0; border-bottom: 1px solid var(--line); }
+.channels li:first-child { border-top: 1px solid var(--line); }
+
+/* care steps */
+.care { list-style: none; padding: 0; margin: 1.4rem 0 0; }
+.care li { padding: 0.9rem 0; border-bottom: 1px solid var(--line); max-width: 60ch; }
+.care strong { font-weight: 500; }
+
+.fill {
+  background: #fdf3d8;
+  border-bottom: 1px dashed var(--clay);
+  padding: 0 0.25em;
+  font-weight: 500;
+}
+
+main { padding-bottom: 4rem; }
+
+/* footer — quiet identity line */
+.site-foot {
+  border-top: 1px solid var(--line);
+  padding: 1.8rem 0 3rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+}
+.site-foot p { max-width: none; margin: 0 0 0.35rem; }
+.site-foot a { color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
